@@ -26,7 +26,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-grok_api_key = os.getenv("GROQ_API_KEY") or "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"
+grok_api_key = os.getenv("GROQ_API_KEY") or 
 
 required_fields = [
     "year",
@@ -206,4 +206,5 @@ async def chat(
         "message": user_friendly_reply,
         "data": None,
         "complete": False,
+
     }
