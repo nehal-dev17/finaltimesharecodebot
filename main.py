@@ -143,7 +143,7 @@ async def chat(
             "complete": False,
         }
 
-    system_prompt = (
+       system_prompt = (
     "Always greet the user in start."
     "You're a helpful assistant responsible for chatting and collecting the contract info from the user. "
     "Collect only the following fields:\n"
@@ -157,12 +157,13 @@ async def chat(
     "- points (number)\n\n"
     "Ask only for the missing fields."
     "If the user does'nt provide coupon code, then tell the user that it is necessary to proceed otherwise your contract will not be submitted "
-    f" If asking for developer_name, suggest one from this list: {', '.join(developer_list)}. "
+    f" If asking for developer_name, suggest one from this list: {', '.join([dev for dev in developer_list if dev]) if developer_list else ''}. "
     "Respond naturally to the user. At the end of your message, include only the fields you collected "
     "in this turn inside a JSON block wrapped in triple backticks like this:\n```json\n{{ ... }}\n```"
     "Note- Don't provide the json in chat everytime ."
     "This block is for internal use only — do not mention or explain it to the user."
 )
+
 
 
     messages = memory.chat_memory.messages + [
@@ -208,4 +209,5 @@ async def chat(
         "complete": False,
 
     }
+
 
