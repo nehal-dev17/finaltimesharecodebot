@@ -1,29 +1,14 @@
 fastapi
 uvicorn
-requests
 python-dotenv
+requests
 
-# # LangChain core + integrations
-langchain
-langchain-openai
-langchain-community
 
-# # Optional but recommended for compatibility
-# openai>=1.0.0
-# tiktoken
+langchain==0.3.27
+langchain-core==0.3.75
+langchain-community==0.3.29
+langchain-openai==0.1.7
 
-# # --- Core backend dependencies ---
-# fastapi==0.115.0
-# uvicorn==0.30.0
-# requests==2.32.3
-# python-dotenv==1.0.1
 
-# # --- LangChain ecosystem (compatible versions) ---
-# langchain==0.2.14
-# langchain-core==0.2.19
-# langchain-community==0.2.10
-# langchain-openai==0.1.14
-
-# # --- LLM API support ---
-# openai>=1.35.0
-# tiktoken>=0.7.0
+faiss-cpu==1.8.0
+numpy==1.26.4
